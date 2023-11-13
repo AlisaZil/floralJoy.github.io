@@ -104,13 +104,17 @@ function buildNavBar(){
         navButton.href = `#${element.section}`
         navButton.innerText = element.name;
         navButton.classList.add('nav-bar-button');
+
+        navButton.addEventListener('click', () => {
+            isNavBarOpen = false;
+            openNavBar();
+        })
+
         navBar.appendChild(navButton);
     })
 }
 
 function openNavBar() {
-    
-    isNavBarOpen = !isNavBarOpen;
     const dimBackground = document.querySelector('.dim-background');
 
     if (isNavBarOpen) {
@@ -120,6 +124,7 @@ function openNavBar() {
         dimBackground.style.opacity = '1';
         dimBackground.style.zIndex = '8';
         navBar.style.right = 0;
+
     } else {
 
         setTimeout(() => { 
@@ -244,11 +249,6 @@ function arrangInformationValues() {
     })
 }
 
-document.addEventListener("scroll", () => {
-    
-    isNavBarBattonInBestSellers();
-});
-
 function isNavBarBattonInBestSellers() {
     const domRect1 = document.querySelector('.about-us-section').getBoundingClientRect();
     const domRect2 = document.querySelector('.open-nav-bar').getBoundingClientRect();
@@ -267,6 +267,17 @@ function isNavBarBattonInBestSellers() {
         
     }
 }
+
+openNavBarButton.addEventListener('click', () => {
+    isNavBarOpen = !isNavBarOpen;
+    openNavBar();
+});
+
+document.addEventListener("scroll", () => {
+    
+    isNavBarBattonInBestSellers();
+});
+
 // document.addEventListener('click', (e) => {
 
 //     detectNavBarClickOutside(e);
