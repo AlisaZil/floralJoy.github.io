@@ -111,11 +111,14 @@ function buildNavBar(){
 function openNavBar() {
     
     isNavBarOpen = !isNavBarOpen;
+    const dimBackground = document.querySelector('.dim-background');
 
     if (isNavBarOpen) {
         
         openNavBarButtonContext.style.display = 'none';
         openNavBarButton.classList.add('light-button');
+        dimBackground.style.opacity = '1';
+        dimBackground.style.zIndex = '8';
         navBar.style.right = 0;
     } else {
 
@@ -123,7 +126,10 @@ function openNavBar() {
             openNavBarButtonContext.style.display = 'block';
             openNavBarButton.classList.remove('light-button');
         }, 300);
-        
+
+        dimBackground.style.opacity = '0';
+        dimBackground.style.zIndex = '0';
+
         navBar.style.right = -250;
     }
 }

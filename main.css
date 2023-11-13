@@ -657,3 +657,17 @@ html{
     fill: #2F3736;
     margin: 0 7px;
 }
+
+
+.dim-background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 8;
+    background-color: rgba(0, 0, 0, 0.161);
+    opacity: 0;
+    transition: 0.3s;
+}
