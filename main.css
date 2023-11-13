@@ -13,6 +13,21 @@
     src: url(./assets/fonts/Poppins-ExtraLight.ttf);
 }
 
+@font-face {
+    font-family: poppins-medium;
+    src: url(./assets/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: poppins-medium-italic;
+    src: url(./assets/fonts/Poppins-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: poppins-light-italic;
+    src: url(./assets/fonts/Poppins-LightItalic.ttf);
+}
+
 html{
     font-family: poppins;
 }
@@ -82,7 +97,8 @@ html{
     height: 100%;
 
     display: flex;
-    align-items: end;
+    align-items: center;
+    animation: fadeIn 0.8s ease;
 }
 
 .main-section .white-section .joy-text{
@@ -94,7 +110,7 @@ html{
 
     animation: slideInRight 0.8s ease;
     transition: 0.3s;
-    z-index: 2;
+    z-index: 5;
 }
 
 .main-section .white-section .joy-text:hover{
@@ -129,6 +145,7 @@ html{
 
     transition: 0.3s;
     cursor: pointer;
+    user-select: none;
 }
 
 .button p{
@@ -174,6 +191,16 @@ html{
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 
 .nav-bar{
@@ -215,12 +242,12 @@ html{
 
 .info-section{
     padding-left: 60px;
-    padding-bottom: 40px;
+    padding-top: 400px;
     z-index: 2;
 }
 
 .info-section .desc{
-    width: 70%;
+    width: 60%;
     font-size: 20px;
     color: #818F8E;
 }
@@ -328,4 +355,92 @@ html{
     font-family: poppins-extra-light;
     transform: rotate(-90deg);
     letter-spacing: 11px;
+}
+
+
+.about-us-section{
+    width: 100%;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us-section .desc-section{
+    width: 35%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 20px;
+
+    user-select: none;
+}
+
+.desc-section .title{
+    font-size: 50px;
+    font-family: poppins-medium;
+    color: #2F3736;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.desc-section .title .italic{
+    font-family: poppins-medium-italic;
+}
+
+.about-us-section .img-frame{
+    position: relative;
+    height: 70%;
+    margin-left: 60px;
+}
+
+.about-us-section .img-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desc-section .quote{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    font-family: poppins-light-italic; 
+    margin-bottom: 25px;
+}
+
+.desc-section .quote p{
+    margin: 0;
+}
+
+.desc-section .desc{
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.about-us-section .img-frame .decor-box{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    border: solid black 2px;
+    border-radius: 5px;
+
+    bottom: 30px;
+    left: 30px;
+}
+
+.desc-section .button p{
+    color: #2F3736;
+    border-color: #2F3736;
+}
+
+.desc-section .button:hover p{
+    color: white;
+}
+
+.desc-section .button:hover{
+    background-color: #2F3736;
 }

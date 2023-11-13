@@ -52,9 +52,11 @@ let isNavBarOpen = false;
 function addHighetToSection(){
     const mainSection = document.querySelector('.main-section');
     const bestSellersSection = document.querySelector('.best-sellers-section');
+    const aboutUsSection = document.querySelector('.about-us-section');
     
     mainSection.style.height = window.innerHeight;
     bestSellersSection.style.height = window.innerHeight;
+    aboutUsSection.style.height = window.innerHeight;
 }
 
 function buildNavBar(){
