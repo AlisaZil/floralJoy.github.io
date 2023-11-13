@@ -338,7 +338,7 @@ html{
 }
 
 .best-sellers-section .decor-box{
-    height: 100%;
+    height: 95%;
     width: 100%;
 
     border: solid 1px rgba(255, 255, 255, 0.21);
@@ -348,13 +348,12 @@ html{
 
 .best-sellers-section .b1{
     right: 80px;
-    top: 25px;
+    top: 35px;
 }
 
 .best-sellers-section .b3 {
     bottom: 100px;
     left: 60px;
-    height: 95%;
 }
 
 .product{
