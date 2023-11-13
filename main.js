@@ -2,6 +2,7 @@ window.addEventListener("load", (event) => {
     addHighetToSection();
     buildNavBar();
     arrangeBestSellerSection();
+    arrangeReviewRowSection();
 });
 
 const navBarValues = [
@@ -42,7 +43,22 @@ const bestSellerValues = [
         imgUrl: "Bouquet-3",
         price: "68"
     }
-]
+];
+
+const reviewRowValues = [
+    {
+        title: '267',
+        desc: 'Bouquet sold last month'
+    },
+    {
+        title: '4.2',
+        desc: 'Stars in Tripadvisor'
+    },
+    {
+        title: '508',
+        desc: 'Positive Reviews'
+    }
+];
 
 const navBar = document.querySelector('.nav-bar');
 const bestSellerFrame = document.querySelector('.best-sellers-frame');
@@ -53,10 +69,12 @@ function addHighetToSection(){
     const mainSection = document.querySelector('.main-section');
     const bestSellersSection = document.querySelector('.best-sellers-section');
     const aboutUsSection = document.querySelector('.about-us-section');
+    const positiveReviewSection = document.querySelector('.positive-row-section');
     
     mainSection.style.height = window.innerHeight;
     bestSellersSection.style.height = window.innerHeight;
     aboutUsSection.style.height = window.innerHeight;
+    positiveReviewSection.style.height = window.innerHeight / 4.5;
 }
 
 function buildNavBar(){
@@ -132,22 +150,48 @@ function arrangeBestSellerSection() {
 
 }
 
+function arrangeReviewRowSection() {
 
-document.addEventListener('click', (e) => {
+    const positiveReviewSection = document.querySelector('.positive-row-section');
 
-    detectNavBarClickOutside(e);
-});
-
-function detectNavBarClickOutside(e) {
-    let targetEl = e.target; // clicked element
-    
-    if (targetEl == navBar) {
-        console.log('click oin');
+    reviewRowValues.forEach((element, index) => {
         
-    }
+        const review = document.createElement('div');
+        const title = document.createElement('p');
+        const desc = document.createElement('p');
 
-    else if (navBar.style.right !== '-250px') {
-        
-        console.log("click out");
-    }
+        review.classList.add('review');
+        review.classList.add(`s${index + 1}`);
+
+        title.classList.add('title');
+        desc.classList.add('desc');
+
+        title.innerText = element.title;
+        desc.innerText = element.desc;
+
+        review.appendChild(title);
+        review.appendChild(desc);
+
+        positiveReviewSection.appendChild(review);
+    })
 }
+
+
+// document.addEventListener('click', (e) => {
+
+//     detectNavBarClickOutside(e);
+// });
+
+// function detectNavBarClickOutside(e) {
+//     let targetEl = e.target; // clicked element
+    
+//     if (targetEl == navBar) {
+//         console.log('click oin');
+        
+//     }
+
+//     else if (navBar.style.right !== '-250px') {
+        
+//         console.log("click out");
+//     }
+// }
