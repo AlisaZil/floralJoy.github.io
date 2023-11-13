@@ -82,7 +82,7 @@ function openNavBar() {
 function arrangeBestSellerSection() {
 
 
-    bestSellerValues.forEach((element) => {
+    bestSellerValues.forEach((element, index) => {
         
         const product = document.createElement('div');
         product.classList.add('product');
@@ -103,6 +103,20 @@ function arrangeBestSellerSection() {
         const productPrice = document.createElement('p');
         productPrice.classList.add('price')
         productPrice.innerText = element.price + '$';
+
+        if (index === 0 || index === (bestSellerValues.length - 1)) {
+            const decorBox = document.createElement('div');
+            decorBox.classList.add('decor-box');
+            decorBox.classList.add(`b${index + 1}`);
+            product.appendChild(decorBox);
+        }
+
+        if (index === 0) {
+            const decorText = document.createElement('p');
+            decorText.innerText = 'BOHO';
+            decorText.classList.add('decor-text')
+            product.appendChild(decorText);
+        }
 
 
         productImgFrame.appendChild(productImg);
