@@ -124,6 +124,11 @@ function arrangeBestSellerSection() {
         productPrice.classList.add('price')
         productPrice.innerText = element.price + '$';
 
+        const descriptionBox = document.createElement('div');
+        descriptionBox.classList.add('desc-box');
+        const descriptionText = document.createElement('p');
+        descriptionText.innerText = element.description;
+
         if (index === 0 || index === (bestSellerValues.length - 1)) {
             const decorBox = document.createElement('div');
             decorBox.classList.add('decor-box');
@@ -146,6 +151,10 @@ function arrangeBestSellerSection() {
 
         product.appendChild(productImgFrame);
         product.appendChild(productDesc);
+
+        descriptionBox.appendChild(descriptionText);
+
+        productImgFrame.appendChild(descriptionBox);
 
         bestSellerFrame.appendChild(product);
     });
