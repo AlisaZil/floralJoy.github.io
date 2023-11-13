@@ -276,23 +276,33 @@ openNavBarButton.addEventListener('click', () => {
 document.addEventListener("scroll", () => {
     
     isNavBarBattonInBestSellers();
+    activateAnimation();
 });
 
-// document.addEventListener('click', (e) => {
+// const pageSection = [
+//     document.querySelector('.best-sellers-section'),
+//     document.querySelector('.about-us-section'),
+//     document.querySelector('.positive-row-section'),
+//     document.querySelector('.information-section')
+// ];
 
-//     detectNavBarClickOutside(e);
-// });
+// function activateAnimation() {
+//     pageSection.forEach(element => {
 
-// function detectNavBarClickOutside(e) {
-//     let targetEl = e.target; // clicked element
-    
-//     if (targetEl == navBar) {
-//         console.log('click oin');
-        
-//     }
-
-//     else if (navBar.style.right !== '-250px') {
-        
-//         console.log("click out");
-//     }
+//         if (isInViewport(element)) {
+//             element.classList.add('animation');
+//         }
+//     })
 // }
+
+function isInViewport(element) {
+    
+    const rect = element.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth  || document.documentElement.clientWidth)
+    );
+}
