@@ -110,7 +110,7 @@ function arrangeBestSellerSection() {
         const productImgFrame = document.createElement('div');
         productImgFrame.classList.add('product-frame');
         const productImg = document.createElement('img');
-        productImg.src = `./assets/images/${element.imgUrl}.png`;
+        productImg.src = `./assets/images/${element.imgUrl}.svg`;
 
         const productDesc = document.createElement('div');
         productDesc.classList.add('product-desc');
