@@ -520,3 +520,37 @@ html{
 .positive-row-section .part-3 {
     left: 100%;
 } */
+
+.information-section{
+    width: 100%;
+    background-color: #2F3736;
+}
+
+.end-footer{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-footer p{
+    color: #2F3736;
+    
+    font-family: Poppins-light;
+    font-size: 20px;
+    user-select: none;
+}
+
+.end-footer .icons{
+    height: fit-content;
+    margin-right: 10px;
+}
+
+.end-footer .icons svg{
+    height: 30px;
+    fill: #2F3736;
+    margin: 0 7px;
+}

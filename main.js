@@ -70,11 +70,13 @@ function addHighetToSection(){
     const bestSellersSection = document.querySelector('.best-sellers-section');
     const aboutUsSection = document.querySelector('.about-us-section');
     const positiveReviewSection = document.querySelector('.positive-row-section');
+    const infoSection = document.querySelector('.information-section');
     
     mainSection.style.height = window.innerHeight;
     bestSellersSection.style.height = window.innerHeight;
     aboutUsSection.style.height = window.innerHeight;
     positiveReviewSection.style.height = window.innerHeight / 4.5;
+    infoSection.style.height = innerHeight;
 }
 
 function buildNavBar(){
