@@ -27,19 +27,19 @@ const navBarValues = [
 
 const bestSellerValues = [
     {
-        name: 'Bouquet 01',
+        name: 'BUY NOW',
         description: 'simple, sunny',
         imgUrl: "Bouquet-1",
         price: "35"
     },
     {
-        name: 'Bouquet 04',
+        name: 'BUY NOW',
         description: 'romantic, pleasant',
         imgUrl: "Bouquet-2",
         price: "50"
     },
     {
-        name: 'Bouquet 07',
+        name: 'BUY NOW',
         description: 'young, pure',
         imgUrl: "Bouquet-3",
         price: "68"
