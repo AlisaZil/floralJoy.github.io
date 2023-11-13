@@ -61,6 +61,8 @@ const reviewRowValues = [
 ];
 
 const navBar = document.querySelector('.nav-bar');
+const openNavBarButton = document.querySelector('.open-nav-bar');
+const openNavBarButtonContext = document.querySelector('.open-nav-bar p');
 const bestSellerFrame = document.querySelector('.best-sellers-frame');
 
 let isNavBarOpen = false;
@@ -91,11 +93,21 @@ function buildNavBar(){
 
 function openNavBar() {
     
-    isNavBarOpen = true;
+    isNavBarOpen = !isNavBarOpen;
 
-    if(isNavBarOpen){
+    if (isNavBarOpen) {
         
+        openNavBarButtonContext.style.display = 'none';
+        openNavBarButton.classList.add('light-button');
         navBar.style.right = 0;
+    } else {
+
+        setTimeout(() => { 
+            openNavBarButtonContext.style.display = 'block';
+            openNavBarButton.classList.remove('light-button');
+        }, 300);
+        
+        navBar.style.right = -250;
     }
 }
 
@@ -188,6 +200,29 @@ function arrangeReviewRowSection() {
 }
 
 
+document.addEventListener("scroll", () => {
+    
+    isNavBarBattonInBestSellers();
+});
+
+function isNavBarBattonInBestSellers() {
+    const domRect1 = document.querySelector('.about-us-section').getBoundingClientRect();
+    const domRect2 = document.querySelector('.open-nav-bar').getBoundingClientRect();
+
+    let isIn = !(
+        domRect1.top > domRect2.bottom ||
+        domRect1.right < domRect2.left ||
+        domRect1.bottom < domRect2.top ||
+        domRect1.left > domRect2.right
+    );
+
+    if (isIn) {
+        openNavBarButton.classList.add('dark-button');
+    } else {
+        openNavBarButton.classList.remove('dark-button');
+        
+    }
+}
 // document.addEventListener('click', (e) => {
 
 //     detectNavBarClickOutside(e);

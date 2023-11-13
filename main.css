@@ -146,16 +146,30 @@ html{
     display: flex;
     align-items: center;
     width: fit-content;
+    height: 30px;
 
     padding: 8px 20px;
 
     border: solid 1px #818F8E;
+    background-color: white;
+    
     border-radius: 5px;
     z-index: 1;
 
     transition: 0.3s;
     cursor: pointer;
     user-select: none;
+
+    fill: #818F8E;
+}
+
+.light-button{
+    border-color: white !important;
+    color: white;
+}
+.light-button:hover{
+    color: #2F3736;
+    /* fill: #818F8E; */
 }
 
 .button p{
@@ -166,6 +180,7 @@ html{
 
 .button:hover{
     background-color: #9db2b1;
+    fill: white;
 }
 
 .button:hover p{
@@ -176,11 +191,28 @@ html{
     transform: scale(0.98);
 }
 
+.dark-button {
+    background-color: #818F8E;
+    color: white;
+    fill: white;
+}
+
+.dark-button p{
+
+    color: white;
+}
+.dark-button:hover {
+    background-color: #6b7675;
+    color: white;
+    fill: white;
+}
+
 .open-nav-bar{
-    position: absolute;
+    position: fixed;
 
     top: 50px;
-    right: 80px;
+    right: 60px;
+    z-index: 10;
 }
 
 @keyframes slideInLeft {
@@ -220,7 +252,7 @@ html{
     bottom: 0;
     
     width: 250px;
-    z-index: 5;
+    z-index: 9;
 
     background-color: #818F8E;
 
@@ -323,6 +355,10 @@ html{
 .product-desc .price{
     font-size: 26px;
     margin: 0;
+}
+
+.product-desc .button{
+    background-color: transparent;
 }
 
 .product-desc .button p{
