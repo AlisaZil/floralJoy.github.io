@@ -3,6 +3,7 @@ window.addEventListener("load", (event) => {
     buildNavBar();
     arrangeBestSellerSection();
     arrangeReviewRowSection();
+    arrangInformationValues();
 });
 
 const navBarValues = [
@@ -12,15 +13,15 @@ const navBarValues = [
     },
     {
         name:'BEST SELLERS',
-        section:'main-section'
+        section:'best-sellers-section'
     },
     {
         name:'ABOUT US',
-        section:'main-section'
+        section:'about-us-section'
     },
     {
-        name:'CONTACT US',
-        section:'main-section'
+        name:'INFORMATION',
+        section:'information-section'
     }
 ];
 
@@ -60,6 +61,21 @@ const reviewRowValues = [
     }
 ];
 
+const informationValues = [
+    {
+        title: 'Telephone',
+        child: '+230-8590-440059'
+    },
+    {
+        title: 'Open Hours',
+        child: '09:00AM - 19:00PM'
+    },
+    {
+        title: 'Email',
+        child: 'FloralJoy569'
+    }
+]
+
 const navBar = document.querySelector('.nav-bar');
 const openNavBarButton = document.querySelector('.open-nav-bar');
 const openNavBarButtonContext = document.querySelector('.open-nav-bar p');
@@ -78,13 +94,14 @@ function addHighetToSection(){
     bestSellersSection.style.height = window.innerHeight;
     aboutUsSection.style.height = window.innerHeight;
     positiveReviewSection.style.height = window.innerHeight / 4.5;
-    infoSection.style.height = innerHeight;
+    infoSection.style.height = innerHeight * 0.8;
 }
 
 function buildNavBar(){
 
     navBarValues.forEach((element) =>{
-        const navButton = document.createElement('p');
+        const navButton = document.createElement('a');
+        navButton.href = `#${element.section}`
         navButton.innerText = element.name;
         navButton.classList.add('nav-bar-button');
         navBar.appendChild(navButton);
@@ -199,6 +216,27 @@ function arrangeReviewRowSection() {
     })
 }
 
+function arrangInformationValues() {
+    const infoSection = document.querySelector('.information-section .desc-section');
+
+    informationValues.forEach((element) => {
+        const section = document.createElement('div');
+        const title = document.createElement('p');
+        const child = document.createElement('p');
+
+        section.classList.add('section');
+        title.classList.add('title');
+        child.classList.add('child');
+
+        title.innerText = element.title;
+        child.innerText = element.child;
+
+        section.appendChild(title);
+        section.appendChild(child);
+
+        infoSection.appendChild(section);
+    })
+}
 
 document.addEventListener("scroll", () => {
     

@@ -40,6 +40,7 @@
 
 html{
     font-family: poppins;
+    scroll-behavior: smooth;
 }
 
 .page{
@@ -262,10 +263,11 @@ html{
     transition: 0.5s;
 }
 
-.nav-bar p{
+.nav-bar a{
     color: white;
     font-size: 23px;
     user-select: none;
+    text-decoration: none;
     margin: 0;
 
     margin: 15px 35px;
@@ -274,12 +276,12 @@ html{
     transition: 0.3s;
 }
 
-.nav-bar p:active{
+.nav-bar a:active{
     transform: scale(0.98);
 }
 
-.nav-bar p:first-child{
-    margin-top: 80px;
+.nav-bar a:first-child{
+    margin-top: 130px;
 }
 
 .info-section{
@@ -451,7 +453,7 @@ html{
     user-select: none;
 }
 
-.desc-section .title{
+.about-us-section .desc-section .title{
     font-size: 50px;
     font-family: poppins-medium;
     color: #2F3736;
@@ -459,7 +461,7 @@ html{
     margin-bottom: 25px;
 }
 
-.desc-section .title .italic{
+.about-us-section .desc-section .title .italic{
     font-family: poppins-medium-italic;
 }
 
@@ -586,6 +588,45 @@ html{
 .information-section{
     width: 100%;
     background-color: #2F3736;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.information-section .img-frame {
+    height: 75%;
+    border: solid white 25px;
+    border-radius: 5px;
+    transition: 0.3s
+}
+
+.information-section .img-frame:hover {
+    margin-right: -15px;
+}
+
+.information-section .img-frame img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.information-section .section{
+    font-family: poppins-medium;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 50px;
+    margin-left: 150px;
+}
+
+.information-section .section p{
+    margin: 0;
+}
+
+.information-section .section .title{
+    font-family: poppins-medium;
+    font-size: 35px;
+    margin-bottom: 20px;
+    user-select: none;
 }
 
 .end-footer{
