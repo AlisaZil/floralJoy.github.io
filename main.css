@@ -1,0 +1,220 @@
+@font-face {
+    font-family: poppins;
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+html{
+    font-family: poppins;
+}
+
+.page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section{
+    width: 100%;
+    display: flex;
+
+    user-select:none;
+}
+
+.main-section .main-img{
+    width: 60%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.main-section .main-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 0;
+}
+
+.main-section .main-img .title{
+    font-size: 190px;
+    font-family: poppins-bold;
+    color: white;
+    z-index: 1;
+    position: relative;
+    
+
+    margin-right: 20px;
+    animation: slideInLeft 0.8s ease;
+    transition: 0.3s;
+}
+
+.main-section .main-img .title:hover{
+    margin-right: 28px;
+}
+
+.main-section .white-section{
+    position: relative;
+    background-color: white;
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    align-items: end;
+}
+
+.main-section .white-section .joy-text{
+
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    transform: translate(-50%, -50%);
+
+    animation: slideInRight 0.8s ease;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.main-section .white-section .joy-text:hover{
+    left: 220px;
+}
+
+.main-section .decorate-box{
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    border: solid 2px white;
+    z-index: 1;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 5px;
+}
+
+.button{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    padding: 8px 20px;
+
+    border: solid 1px #818F8E;
+    border-radius: 5px;
+    z-index: 1;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button p{
+    margin: 0;
+    color: #95a5a4;
+    margin-right: 10px;
+}
+
+.button:hover{
+    background-color: #9db2b1;
+}
+
+.button:hover p{
+    color: white;
+}
+
+.button:active{
+    transform: scale(0.98);
+}
+
+.open-nav-bar{
+    position: absolute;
+
+    top: 50px;
+    right: 80px;
+}
+
+@keyframes slideInLeft {
+    0%{
+        margin-right: 200px;
+    }
+    100%{
+        margin-right: 20px;
+    }
+}
+
+@keyframes slideInRight {
+    0%{
+        left: 400px;
+    }
+    100%{
+        left: 200px;
+    }
+}
+
+
+
+.nav-bar{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    bottom: 0;
+    
+    width: 250px;
+    z-index: 5;
+
+    background-color: #818F8E;
+
+    display: flex;
+    flex-direction: column;  
+
+    transition: 0.5s;
+}
+
+.nav-bar p{
+    color: white;
+    font-size: 23px;
+    user-select: none;
+    margin: 0;
+
+    margin: 15px 35px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.nav-bar p:active{
+    transform: scale(0.98);
+}
+
+.nav-bar p:first-child{
+    margin-top: 80px;
+}
+
+.info-section{
+    margin-left: 60px;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+.info-section .desc{
+    width: 70%;
+    font-size: 20px;
+    color: #818F8E;
+}
