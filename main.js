@@ -4,8 +4,6 @@ window.addEventListener("load", (event) => {
     arrangeBestSellerSection();
     arrangeReviewRowSection();
     arrangInformationValues();
-
-    alert(window.innerWidth);
 });
 
 const navBarValues = [
@@ -91,12 +89,21 @@ function addHighetToSection(){
     const aboutUsSection = document.querySelector('.about-us-section');
     const positiveReviewSection = document.querySelector('.positive-row-section');
     const infoSection = document.querySelector('.information-section');
-    
+
     mainSection.style.height = window.innerHeight;
     bestSellersSection.style.height = window.innerHeight;
     aboutUsSection.style.height = window.innerHeight;
     positiveReviewSection.style.height = window.innerHeight / 4.5;
     infoSection.style.height = innerHeight * 0.8;
+
+    if (window.innerWidth < 600) {
+        bestSellersSection.style.height = window.innerHeight * 1.5;
+        aboutUsSection.style.height = window.innerHeight * 1.5;
+        positiveReviewSection.style.height = window.innerHeight / 1.5;
+        infoSection.style.height = innerHeight * 1.2;
+
+    }
+    
 }
 
 function buildNavBar(){
