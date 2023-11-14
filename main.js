@@ -4,6 +4,8 @@ window.addEventListener("load", (event) => {
     arrangeBestSellerSection();
     arrangeReviewRowSection();
     arrangInformationValues();
+
+    alert(window.innerWidth);
 });
 
 const navBarValues = [
@@ -276,7 +278,7 @@ openNavBarButton.addEventListener('click', () => {
 document.addEventListener("scroll", () => {
     
     isNavBarBattonInBestSellers();
-    activateAnimation();
+    // activateAnimation();
 });
 
 // const pageSection = [
