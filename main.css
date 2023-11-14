@@ -763,12 +763,30 @@ html{
     }
 
     .best-sellers-section .best-sellers-frame{
-        /* flex-direction: column; */
+        flex-direction: column;
         /* height: 100%; */
     }
 
     .best-sellers-frame .product-frame{
         /* height: 50%; */
+    }
+
+    .best-sellers-section .title{
+        padding-bottom: 160px;
+        margin-top: -80px;
+    }
+
+    .product{
+        height: 35%;
+        margin-bottom: 80px;
+    }
+
+    .best-sellers-frame .product:first-child{
+        margin-left: 180px;
+    }
+
+    .best-sellers-frame .product:last-child{
+        margin-right: 180px;
     }
 
     .about-us-section{
