@@ -86,12 +86,11 @@ html{
 }
 
 .main-section .main-img .title{
-    font-size: 190px;
-    font-family: poppins-bold;
-    color: white;
+
+    height: fit-content;
+    width: 80%;
     z-index: 1;
     position: relative;
-    
 
     margin-right: 20px;
     animation: slideInLeft 0.8s ease;
@@ -117,8 +116,11 @@ html{
 
     position: absolute;
     top: 50%;
-    left: 200px;
+    right: 0;
     transform: translate(-50%, -50%);
+
+    height: fit-content;
+    width: 63%;
 
     animation: slideInRight 0.8s ease;
     transition: 0.3s;
@@ -126,7 +128,7 @@ html{
 }
 
 .main-section .white-section .joy-text:hover{
-    left: 220px;
+    right: -20px;
 }
 
 .main-section .decorate-box{
@@ -296,6 +298,8 @@ html{
     font-size: 20px;
     color: #818F8E;
 }
+
+/* best sellers section */
 
 .best-sellers-section{
     width: 100%;
@@ -690,4 +694,64 @@ html{
     background-color: rgba(0, 0, 0, 0.161);
     opacity: 0;
     transition: 0.3s;
+}
+
+/*phone*/
+
+@media (max-width:450px) {
+
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+    .main-section{
+        flex-direction: column;
+    }
+
+    .main-section .main-img{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-section .main-img .title{
+        margin: 0;
+    }
+
+    .main-section .white-section .joy-text{
+        top: 100px;
+        left: 50%;
+        animation: none;
+    }
+
+    .main-section .white-section{
+        position: relative;
+        width: 100%;
+        height: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.8s ease;
+    }
+
+    .info-section{
+        z-index: 2;
+        width: fit-content;
+        padding-left: 0;
+        padding-top: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-section .desc{
+        /* width: 60%; */
+        width: 80%;
+        text-align: center;
+        font-size: 20px;
+        color: #818F8E;
+        margin-top: 100px;
+    }
 }
